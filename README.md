@@ -17,11 +17,6 @@ Add the following snippet to the ```<head>``` tag of your HTML page
 <link rel="stylesheet" href="src/button.css" />
 ```
 
-Add the following snippet at the end of the opening ```<body>``` tag just before the closing ```</body>``` tag
-```html
-<script src="src/button.js"></script>
-```
-
 And then you can add the cloud play button anywhere on your website with this snippet (example)
 ```html
 <a class="xcg light" target="_blank" href="https://cloud-play.xsolla.com/cgs/doomer">
