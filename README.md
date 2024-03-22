@@ -10,17 +10,15 @@ Cloud play button is a fully customizable button that allows you to add an Xsoll
 
 
 ## Quick Start
-First, copy over ```_``` and ```src``` folders into the root of your webpage folder.
+First, copy over ```src``` folder into the root of your webpage folder.
 
 Add the following snippet to the ```<head>``` tag of your HTML page
 ```html
-<link rel="stylesheet" href="_/docs.css" />
 <link rel="stylesheet" href="src/button.css" />
 ```
 
 Add the following snippet at the end of the opening ```<body>``` tag just before the closing ```</body>``` tag
 ```html
-<script src="_/docs.js"></script>
 <script src="src/button.js"></script>
 ```
 
