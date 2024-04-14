@@ -11,23 +11,25 @@ Cloud play button is a fully customizable button that allows you to add an Xsoll
 
 ## Quick Start
 
-Add the style snippet to the `<head>` tag of your HTML page
+Add the bundle snippet to the `<head>` tag of your HTML page
 
 ```html
 <link rel="stylesheet" href="https://cdn.xsolla.net/cloud-gaming-bucket-prod/button/src/button.min.css" />
+<script src="https://cdn.xsolla.net/cloud-gaming-bucket-prod/button/src/button.min.js" defer></script>
 ```
 
-Or copy over `src` folder into the root of your webpage folder and then add the style snippet to the `<head>` tag of your HTML page
+Or copy over `src` folder into the root of your webpage folder and then add the bundle snippet to the `<head>` tag of your HTML page
 
 ```html
 <link rel="stylesheet" href="src/button.min.css" />
+<script src="src/button.min.js" defer></script>
 ```
 
 And then you can add the cloud play button anywhere on your website with this snippet (example)
 
 ```html
 <a class="xcg-btn" target="_blank" href="https://cloud-play.xsolla.com/cgs/doomer">
-  <b>Instant Play on Xsolla</b>
+  <b>Play Now</b>
 </a>
 ```
 

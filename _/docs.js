@@ -1,10 +1,11 @@
-const XCG_CDN_CSS_FILE = 'https://cdn.xsolla.net/cloud-gaming-bucket-prod/button/src/button.min.css'
+const BUTTON_CDN_SRC = "https://cdn.xsolla.net/cloud-gaming-bucket-prod/button/src/";
+const BUTTON_CDN_CSS_FILE = BUTTON_CDN_SRC + "button.min.css";
+const BUTTON_CDN_JS_FILE = BUTTON_CDN_SRC + "button.min.js";
 
-const styleSource = document.getElementById("style_source");
+const bundleSource = document.getElementById("bundle_source");
 const buttonSource = document.getElementById("button_source");
 const buttonPreview = document.getElementById("button_preview");
 
-const inputText = document.getElementById("button_text");
 const inputLink = document.getElementById("button_link");
 const inputExtraText = document.getElementById("button_extra_text");
 
@@ -16,7 +17,7 @@ const selectTarget = document.getElementById("button_target");
 
 const getClassName = function () {
   const xcg = "xcg-btn";
-  const prefix = xcg + '-';
+  const prefix = xcg + "-";
 
   let classNames = [xcg];
 
@@ -37,7 +38,7 @@ const getClassName = function () {
 };
 
 const getButtonText = function () {
-  return inputText.value;
+  return "Play Now";
 };
 const getButtonHref = function () {
   return inputLink.value;
@@ -56,20 +57,24 @@ const getButtonTemplate = function () {
 `;
 };
 
-const getStyleTemplete = function () {
-  return `<link rel="stylesheet" href="${XCG_CDN_CSS_FILE}">`;
+const getSourceTemplate = function () {
+  const link = `<link rel="stylesheet" href="${BUTTON_CDN_CSS_FILE}" />`;
+  const script = `<script src="${BUTTON_CDN_JS_FILE}" defer></script>`;
+  return `${link}\n${script}`;
 };
 
 const build = function () {
-  const styleTemplate = getStyleTemplete();
+  const sourceTemplate = getSourceTemplate();
   const buttonTemplate = getButtonTemplate();
   buttonSource.value = buttonTemplate;
   buttonPreview.innerHTML = buttonTemplate;
-  styleSource.innerHTML = styleTemplate;
+  bundleSource.innerHTML = sourceTemplate;
+  if (typeof window.animateCloudPlayButton === "function") {
+    window.animateCloudPlayButton()
+  }
 };
 
-inputText.oninput = build;
-inputText.onchange = build;
+
 inputLink.oninput = build;
 inputLink.onchange = build;
 inputExtraText.oninput = build;
@@ -90,8 +95,8 @@ selectTheme.onchange = function () {
 buttonSource.onclick = function () {
   buttonSource.select();
 };
-styleSource.onclick = function () {
-  styleSource.select();
+bundleSource.onclick = function () {
+  bundleSource.select();
 };
 
 build();
