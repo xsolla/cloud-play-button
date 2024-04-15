@@ -66,14 +66,13 @@ const getSourceTemplate = function () {
 const build = function () {
   const sourceTemplate = getSourceTemplate();
   const buttonTemplate = getButtonTemplate();
+  bundleSource.value = sourceTemplate;
   buttonSource.value = buttonTemplate;
   buttonPreview.innerHTML = buttonTemplate;
-  bundleSource.innerHTML = sourceTemplate;
   if (typeof window.animateCloudPlayButton === "function") {
-    window.animateCloudPlayButton()
+    window.animateCloudPlayButton();
   }
 };
-
 
 inputLink.oninput = build;
 inputLink.onchange = build;
